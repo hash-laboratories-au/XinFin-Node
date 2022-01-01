@@ -6,10 +6,10 @@ services:
         context: .
         dockerfile: /root/XinFin/XinFin-Node/dockerfiles/xdc-testnet-node/Dockerfile
     volumes:
-      - "./xdcchain-testnet-1:/work/xdcchain-testnet"
-      - "./testnetgenesis.json:/work/testnetgenesis.json"
-      - "./start-apothem.sh:/work/start-apothem.sh"
-      - "./testnetbootnodes.list:/work/testnetbootnodes.list"
+      - "./xdcchain-1:/work/xdcchain"
+      - "./genesis.json:/work/genesis.json"
+      - "./start.sh:/work/start.sh"
+      - "./bootnodes.list:/work/bootnodes.list"
       - "./.pwd:/work/.pwd"
       - "/etc/localtime:/etc/localtime:ro"
     restart: "always"
@@ -24,10 +24,10 @@ services:
         context: .
         dockerfile: /root/XinFin/XinFin-Node/dockerfiles/xdc-testnet-node/Dockerfile
     volumes:
-      - "./xdcchain-testnet-2:/work/xdcchain-testnet"
-      - "./testnetgenesis.json:/work/testnetgenesis.json"
-      - "./start-apothem.sh:/work/start-apothem.sh"
-      - "./testnetbootnodes.list:/work/testnetbootnodes.list"
+      - "./xdcchain-2:/work/xdcchain"
+      - "./genesis.json:/work/genesis.json"
+      - "./start.sh:/work/start.sh"
+      - "./bootnodes.list:/work/bootnodes.list"
       - "./.pwd:/work/.pwd"
       - "/etc/localtime:/etc/localtime:ro"
     restart: "always"

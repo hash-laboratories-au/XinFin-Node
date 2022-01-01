@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -rf xdcchain-testnet1*
+rm -rf xdcchain-*
