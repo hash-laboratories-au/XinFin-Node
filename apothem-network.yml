@@ -2,7 +2,9 @@ version: "3.4"
 
 services:
   xinfinnetwork1:
-    build: ./dockerfiles/xdc-testnet-node/Dockerfile
+    build:
+        context: .
+        dockerfile: /root/XinFin/XinFin-Node/dockerfiles/xdc-testnet-node/Dockerfile
     volumes:
       - "./xdcchain-testnet-1:/work/xdcchain-testnet"
       - "./testnetgenesis.json:/work/testnetgenesis.json"
@@ -20,7 +22,9 @@ services:
       - "8898:8556"
 
   xinfinnetwork2:
-    build: ./dockerfiles/xdc-testnet-node/Dockerfile
+    build:
+        context: .
+        dockerfile: /root/XinFin/XinFin-Node/dockerfiles/xdc-testnet-node/Dockerfile
     volumes:
       - "./xdcchain-testnet-2:/work/xdcchain-testnet"
       - "./testnetgenesis.json:/work/testnetgenesis.json"

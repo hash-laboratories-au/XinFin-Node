@@ -1,17 +1,9 @@
 #!/bin/bash
-while getopts u:a:f: flag
-do
-    case "${flag}" in
-        p) PRIVATE_KEY=${OPTARG};;
-        private_key) PRIVATE_KEY=${OPTARG};;
-    esac
-done
-
 if [ ! -d /work/xdcchain-testnet/XDC/chaindata ]
 then
   echo $PRIVATE_KEY >> /tmp/key
-  wallet=$(${PROJECT_DIR}/build/bin/$Bin_NAME account import --password .pwd --datadir /work/xdcchain-testnet /tmp/key | awk -v FS="({|})" '{print $2}')
-  ${PROJECT_DIR}/build/bin/$Bin_NAME --datadir /work/xdcchain-testnet init ./genesis/genesis.json
+  wallet=$(XDC account import --password .pwd --datadir /work/xdcchain-testnet /tmp/key | awk -v FS="({|})" '{print $2}')
+  XDC --datadir /work/xdcchain-testnet init ./genesis/genesis.json
   #wallet=$(XDC account new --password /work/.pwd --datadir /work/xdcchain-testnet | awk -v FS="({|})" '{print $2}')
   #echo "Initializing Testnet Genesis Block"
   #echo $wallet
