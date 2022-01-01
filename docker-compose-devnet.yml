@@ -13,7 +13,7 @@ services:
       - "./.pwd:/work/.pwd"
       - "/etc/localtime:/etc/localtime:ro"
     restart: "always"
-    env_file: "./envs/.env.${HOSTIP}-1"
+    env_file: "./envs/${HOSTIP}-1"
     ports:
       - "30303:30303"
       - "8545:8545"
@@ -31,7 +31,7 @@ services:
       - "./.pwd:/work/.pwd"
       - "/etc/localtime:/etc/localtime:ro"
     restart: "always"
-    env_file: "./envs/.env.${HOSTIP}-2"
+    env_file: "./envs/${HOSTIP}-2"
     ports:
       - "30304:30304"
       - "8546:8546"
