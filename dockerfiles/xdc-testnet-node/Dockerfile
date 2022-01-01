@@ -15,4 +15,4 @@ EXPOSE 8546
 EXPOSE 30304
 EXPOSE 30303
 
-ENTRYPOINT ["bash","/work/start-apothem.sh"]
+ENTRYPOINT ["bash","/work/start.sh"]
