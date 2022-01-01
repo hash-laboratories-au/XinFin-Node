@@ -13,11 +13,9 @@ services:
       - "./.pwd:/work/.pwd"
       - "/etc/localtime:/etc/localtime:ro"
     restart: "always"
-    env_file: .env
-    environment:
-      - PRIVATE_KEY=bde24b587c04ab8d8cc2acc176a4b85e646d3c89f4d98d570629d756aea68303
+    env_file: ".env.${}-1"
     ports:
-      - "30303:30304"
+      - "30303:30303"
       - "8545:8545"
       - "8555:8555"
 
@@ -33,10 +31,8 @@ services:
       - "./.pwd:/work/.pwd"
       - "/etc/localtime:/etc/localtime:ro"
     restart: "always"
-    env_file: .env
-    environment:
-      - PRIVATE_KEY=3efdb44088929167487da052125162b48d8d54fe8f7b7db11b5d5cc3b9a1c14b
+    env_file: ".env.${}-2"
     ports:
       - "30304:30304"
-      - "8546:8545"
-      - "8556:8555"
+      - "8546:8546"
+      - "8556:8556"
