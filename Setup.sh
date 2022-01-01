@@ -5,7 +5,7 @@ function configureXinFinNode(){
     read -p "Please enter your XinFin MasterNode Name :- " MasterNodeName
     echo "Your Masternode Name is ${MasterNodeName}"
     
-    echo "Installing Git      "
+    echo "Installing Git"
 
     sudo apt-get update
 
