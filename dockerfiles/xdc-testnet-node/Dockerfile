@@ -10,9 +10,4 @@ RUN \
 RUN cp /work/xdcchain/build/bin/XDC /usr/bin && chmod +x /usr/bin/XDC && \
     rm -rf xdcchain
 
-EXPOSE 8545 
-EXPOSE 8546
-EXPOSE 30304
-EXPOSE 30303
-
 ENTRYPOINT ["bash","/work/start-apothem.sh"]
