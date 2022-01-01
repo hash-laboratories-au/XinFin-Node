@@ -3,7 +3,7 @@ if [ ! -d /work/xdcchain-testnet/XDC/chaindata ]
 then
   echo $PRIVATE_KEY >> /tmp/key
   wallet=$(XDC account import --password .pwd --datadir /work/xdcchain-testnet /tmp/key | awk -v FS="({|})" '{print $2}')
-  XDC --datadir /work/xdcchain-testnet init ./genesis/genesis.json
+  XDC --datadir /work/xdcchain-testnet init /work/testnetgenesis.json
   #wallet=$(XDC account new --password /work/.pwd --datadir /work/xdcchain-testnet | awk -v FS="({|})" '{print $2}')
   #echo "Initializing Testnet Genesis Block"
   #echo $wallet
