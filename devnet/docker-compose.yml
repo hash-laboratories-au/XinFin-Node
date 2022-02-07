@@ -5,6 +5,8 @@ services:
     build:
         context: .
         dockerfile: Dockerfile
+        args:
+          TIME: "${TIME}"
     volumes:
       - "./xdcchain-1:/work/xdcchain"
       - "./genesis.json:/work/genesis.json"
@@ -23,6 +25,8 @@ services:
     build:
         context: .
         dockerfile: Dockerfile
+        args:
+          TIME: "${TIME}"
     volumes:
       - "./xdcchain-2:/work/xdcchain"
       - "./genesis.json:/work/genesis.json"
