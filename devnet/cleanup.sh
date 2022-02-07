@@ -1,3 +1,3 @@
 #!/bin/bash
-rm -rf xdcchain-*
+# rm -rf xdcchain-*
 docker system prune -f -a
