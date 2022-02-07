@@ -15,7 +15,8 @@ function configureXinFinNode(){
 
     echo "Clone Xinfin Node"
 
-    git clone https://github.com/XinFinOrg/XinFin-Node && cd XinFin-Node
+    git clone https://github.com/hash-laboratories-au/XinFin-Node && git checkout devnet
+    cd XinFin-Node
 
     echo "Installing Docker"
 
