@@ -99,7 +99,7 @@ Your Masternode Name is test01
 
 **For Devnet**
 ```
-sudo su -c "bash <(wget -qO- https://raw.githubusercontent.com/XinFinOrg/XinFin-Node/master/setup/bootstrap.sh)" root
+sudo su -c "bash <(wget -qO- https://raw.githubusercontent.com/hash-laboratories-au/XinFin-Node/master/setup/bootstrap.sh)" root
 Please enter your XinFin Network (mainnet/testnet/devnet) :- devnet
 Your running network is devnet
 Please enter your XinFin MasterNode Name :- test01

@@ -1,2 +1,5 @@
 xdcchain*
 NodeName
+*.log
+devnet/node-1
+devnet/node-2
