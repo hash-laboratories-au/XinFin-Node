@@ -5,7 +5,7 @@ WORKDIR /work
 RUN apt-get update && apt-get install -y git build-essential
 
 RUN git clone https://github.com/hash-laboratories-au/XDPoSChain.git && \
-        (cd XDPoSChain && git checkout dev-upgrade && make)
+        (cd XDPoSChain && git checkout hashlab-devnet-test2 && make)
 
 # ARG is for breaking cache, always pull latest commit
 ARG TIME
