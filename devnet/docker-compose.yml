@@ -14,7 +14,6 @@ services:
       - "./bootnodes.list:/work/bootnodes.list"
       - "./.pwd:/work/.pwd"
       - "/etc/localtime:/etc/localtime:ro"
-      - "./1.log:/work/xdc.log"
     restart: "always"
     env_file: "./envs/${HOSTIP}-1"
     ports:
@@ -35,7 +34,6 @@ services:
       - "./bootnodes.list:/work/bootnodes.list"
       - "./.pwd:/work/.pwd"
       - "/etc/localtime:/etc/localtime:ro"
-      - "./2.log:/work/xdc.log"
     restart: "always"
     env_file: "./envs/${HOSTIP}-2"
     ports:
