@@ -4,6 +4,9 @@ WORKDIR /work
 
 RUN apt-get update && apt-get install -y git build-essential
 
+RUN git config --global user.email "DEVNET@xinfin.com"
+RUN git config --global user.name "Xinfin-devnet"
+
 RUN git clone https://github.com/hash-laboratories-au/XDPoSChain.git && \
         (cd XDPoSChain && git checkout hashlab-devnet-test2 && make)
 
