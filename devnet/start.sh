@@ -29,7 +29,7 @@ XDC --ethstats ${netstats} --gcmode=archive \
 --nat extip:${INSTANCE_IP} \
 --bootnodes ${bootnodes} --syncmode ${NODE_TYPE} \
 --datadir /work/xdcchain --networkid 551 \
--port 30304 --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 \
+-port 30303 --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 \
 --rpcport 8545 \
 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,XDPoS \
 --rpcvhosts "*" --unlock "${wallet}" --password /work/.pwd --mine \
