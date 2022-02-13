@@ -15,6 +15,6 @@ ARG TIME
 RUN echo "TIME: ${TIME}" && cd XDPoSChain && git pull && make
 RUN cp /work/XDPoSChain/build/bin/XDC /usr/bin && chmod +x /usr/bin/XDC
 
-EXPOSE 8545 8546 30304 30303 8555 8556
+# EXPOSE 8545 8546 30304 30303 8555 8556
 
 ENTRYPOINT ["bash","/work/start.sh"]
