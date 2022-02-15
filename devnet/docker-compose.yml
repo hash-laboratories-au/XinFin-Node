@@ -4,7 +4,7 @@ services:
   xinfinnetwork1:
     build:
         context: .
-        dockerfile: .
+        dockerfile: Dockerfile
         args:
           TIME: "${TIME}"
     volumes:
