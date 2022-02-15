@@ -4,7 +4,9 @@ services:
   xinfinnetwork1:
     build:
         context: .
-        dockerfile: . 
+        dockerfile: .
+        args:
+          TIME: "${TIME}"
     volumes:
       - "./xdcchain-1:/work/xdcchain"
       - "./genesis.json:/work/genesis.json"
