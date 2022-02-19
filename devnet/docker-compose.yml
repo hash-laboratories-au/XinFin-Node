@@ -31,7 +31,7 @@ services:
         args:
           TIME: "${TIME}"
     volumes:
-      - "./xdcchain-1:/work/xdcchain"
+      - "./xdcchain-2:/work/xdcchain"
       - "./genesis.json:/work/genesis.json"
       - "./start.sh:/work/start.sh"
       - "./bootnodes.list:/work/bootnodes.list"
