@@ -8,7 +8,7 @@ RUN git config --global user.email "DEVNET@xinfin.com"
 RUN git config --global user.name "Xinfin-devnet"
 
 RUN git clone https://github.com/hash-laboratories-au/XDPoSChain.git && \
-        (cd XDPoSChain && git checkout hashlab-devnet-test3 && make)
+        (cd XDPoSChain && git checkout hashlab-devnet-test2 && make)
 
 # ARG is for breaking cache, always pull latest commit
 ARG TIME
