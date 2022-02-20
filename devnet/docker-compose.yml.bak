@@ -16,13 +16,11 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
     restart: "always"
     env_file: "./envs/${HOSTIP}-1"
-    environment:
-      - NODE_NUM=1
     ports:
       - "30303:30303"
       - "8545:8545"
       - "8555:8555"
-    network_mode: host
+      - "30301:30301"
   xinfinnetwork2:
     build:
         context: .
@@ -38,10 +36,8 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
     restart: "always"
     env_file: "./envs/${HOSTIP}-2"
-    environment:
-      - NODE_NUM=2
     ports:
-      - "30304:30304"
-      - "8546:8546"
-      - "8556:8556"
-    network_mode: host
+      - "30304:30303"
+      - "8546:8545"
+      - "8556:8555"
+      - "30302:30301"

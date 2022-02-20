@@ -23,22 +23,13 @@ done < "$input"
 INSTANCE_IP=$(curl https://checkip.amazonaws.com)
 netstats="${wallet}_${INSTANCE_IP}:xinfin_xdpos_hybrid_network_stats@devnetstats.apothem.network:2000"
 
-echo "Starting nodes $NODE_NUM with $bootnodes ..."
-PORT_NUM=30303
-RPCPORT=8545
-WSPORT=8555
-if [ "$NODE_NUM" = "2" ]; then
-  PORT_NUM=30304
-  RPCPORT=8546
-  WSPORT=8556 
-fi
-
+echo "Starting nodes $NODE_NUM with IP $INSTANCE_IP and wallet $wallet on ports $PORT, $RPCPORT, $WSPORT with $bootnodes ..."
 
 XDC --ethstats ${netstats} --gcmode=archive \
 --nat extip:${INSTANCE_IP} \
 --bootnodes ${bootnodes} --syncmode ${NODE_TYPE} \
 --datadir /work/xdcchain --networkid 551 \
--port $PORT_NUM --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 \
+-port $PORT --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 \
 --rpcport $RPCPORT \
 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,XDPoS \
 --rpcvhosts "*" --unlock "${wallet}" --password /work/.pwd --mine \
