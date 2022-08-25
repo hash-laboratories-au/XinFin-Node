@@ -30,6 +30,8 @@ cp -r node-2/keystore xdcchain-2/
 cp node-1/XDC/* xdcchain-1/XDC/
 cp node-2/XDC/* xdcchain-2/XDC/
 
-./docker-up.sh
+#./docker-up.sh
+./docker-up-normal.sh
+./docker-up-chaos.sh
 
 sh pre-rollback.sh &
