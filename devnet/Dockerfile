@@ -8,7 +8,7 @@ RUN git config --global user.email "DEVNET@xinfin.com"
 RUN git config --global user.name "Xinfin-devnet"
 
 RUN git clone https://github.com/XinFinOrg/XDPoSChain.git && \
-        (cd XDPoSChain && git checkout devnet-hashlab-2 && make)
+        (cd XDPoSChain && git checkout dev-upgrade && mv common/constants/constants.go.devnet common/constants.go && make)
 
 # ARG is for breaking cache, always pull latest commit
 ARG TIME
