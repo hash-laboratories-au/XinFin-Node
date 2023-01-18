@@ -45,3 +45,25 @@ services:
       - "8546:8546"
       - "8556:8556"
     network_mode: host
+  xinfinnetwork3:
+    build:
+        context: .
+        dockerfile: Dockerfile
+        args:
+          TIME: "${TIME}"
+    volumes:
+      - "./xdcchain-3:/work/xdcchain"
+      - "./genesis.json:/work/genesis.json"
+      - "./start.sh:/work/start.sh"
+      - "./bootnodes.list:/work/bootnodes.list"
+      - "./.pwd:/work/.pwd"
+      - "/etc/localtime:/etc/localtime:ro"
+    restart: "always"
+    env_file: "./envs/${HOSTIP}-3"
+    environment:
+      - NODE_NUM=3
+    ports:
+      - "30305:30305"
+      - "8547:8547"
+      - "8557:8557"
+    network_mode: host
