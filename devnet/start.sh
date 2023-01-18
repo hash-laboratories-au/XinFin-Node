@@ -28,7 +28,7 @@ echo "Starting nodes $NODE_NUM with IP $INSTANCE_IP and wallet $wallet on ports 
 XDC --ethstats ${netstats} --gcmode=archive \
 --nat extip:${INSTANCE_IP} \
 --bootnodes ${bootnodes} --syncmode ${NODE_TYPE} \
---datadir /work/xdcchain --networkid 551 \
+--datadir /work/xdcchain --networkid 100 \
 -port $PORT --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 \
 --rpcport $RPCPORT \
 --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,XDPoS \
