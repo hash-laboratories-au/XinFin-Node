@@ -25,8 +25,8 @@
           "timeoutPeriod": 10,
           "certificateThreshold": 2
         },
-        "allConfigs": [
-          {
+        "allConfigs": {
+          "0": {
             "waitPeriod": 2,
             "minePeriod": 2,
             "switchRound": 0,
@@ -34,7 +34,7 @@
             "timeoutPeriod": 10,
             "certificateThreshold": 2
           }
-        ]
+        }
       }
     }
   },
