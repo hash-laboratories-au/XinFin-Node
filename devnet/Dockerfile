@@ -13,6 +13,6 @@ RUN git clone https://github.com/XinFinOrg/XDC-Subnet.git && \
 # ARG is for breaking cache, always pull latest commit
 ARG TIME
 RUN echo "TIME: ${TIME}" && cd XDC-Subnet && git pull && make
-RUN cp /work/XDPoSChain/build/bin/XDC /usr/bin && chmod +x /usr/bin/XDC
+RUN cp /work/XDC-Subnet/build/bin/XDC /usr/bin && chmod +x /usr/bin/XDC
 
 ENTRYPOINT ["bash","/work/start.sh"]
