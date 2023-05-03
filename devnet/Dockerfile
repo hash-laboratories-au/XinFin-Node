@@ -8,7 +8,7 @@ RUN git config --global user.email "DEVNET@xinfin.com"
 RUN git config --global user.name "Xinfin-devnet"
 
 RUN git clone https://github.com/XinFinOrg/XDC-Subnet.git && \
-        (cd XDC-Subnet && git checkout main && mv common/constants/constants.go.devnet common/constants.go && make)
+        (cd XDC-Subnet && git checkout main && make)
 
 # ARG is for breaking cache, always pull latest commit
 ARG TIME
