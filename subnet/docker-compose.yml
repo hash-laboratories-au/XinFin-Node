@@ -30,16 +30,16 @@ services:
       - "8555:8555"
   subnet2:
     image: xinfinorg/xdcsubnets:latest
-    entrypoint: "sleep infinity"
+    # entrypoint: "sleep infinity"
     volumes:
       - "./xdcchain2:/work/xdcchain"
       - "./genesis.json:/work/genesis.json"
     restart: "always"
     env_file: ".env2"
     ports:
-      - "30304:30304"
-      - "8546:8546"
-      - "8556:8556"
+      - "30304:30303"
+      - "8546:8545"
+      - "8556:8555"
   subnet3:
     image: xinfinorg/xdcsubnets:latest
     volumes:
