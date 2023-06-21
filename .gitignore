@@ -6,3 +6,6 @@ subnet/.env.bootnode
 subnet/genesis.json
 subnet/puppeth
 subnet/bootnodes/*
+subnet/.env2
+.gitignore
+subnet/.env3

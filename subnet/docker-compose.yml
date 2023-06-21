@@ -6,17 +6,6 @@ services:
     entrypoint: ["puppeth"]
     volumes:
       - "./puppeth:/root/.puppeth"
-  subnet:
-    image: xinfinorg/xdcsubnets:latest
-    volumes:
-      - "./xdcchain:/work/xdcchain"
-      - "./genesis.json:/work/genesis.json"
-    restart: "always"
-    env_file: ".env"
-    ports:
-      - "30303:30303"
-      - "8545:8545"
-      - "8555:8555"
   bootnode:
     image: xinfinorg/xdcsubnets:latest
     restart: "always"
@@ -28,3 +17,37 @@ services:
     ports:
       - "30301:30301/tcp"
       - "30301:30301/udp"
+  subnet:
+    image: xinfinorg/xdcsubnets:latest
+    volumes:
+      - "./xdcchain:/work/xdcchain"
+      - "./genesis.json:/work/genesis.json"
+    restart: "always"
+    env_file: ".env"
+    ports:
+      - "30303:30303"
+      - "8545:8545"
+      - "8555:8555"
+  subnet2:
+    image: xinfinorg/xdcsubnets:latest
+    entrypoint: "sleep infinity"
+    volumes:
+      - "./xdcchain2:/work/xdcchain"
+      - "./genesis.json:/work/genesis.json"
+    restart: "always"
+    env_file: ".env2"
+    ports:
+      - "30304:30304"
+      - "8546:8546"
+      - "8556:8556"
+  subnet3:
+    image: xinfinorg/xdcsubnets:latest
+    volumes:
+      - "./xdcchain3:/work/xdcchain"
+      - "./genesis.json:/work/genesis.json"
+    restart: "always"
+    env_file: ".env3"
+    ports:
+      - "30305:30303"
+      - "8547:8545"
+      - "8557:8555"
