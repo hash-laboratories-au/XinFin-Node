@@ -1,5 +1,13 @@
 version: "3.7"
 
+networks:
+  docker_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.25.0/24
+          gateway: 192.168.25.1
+
 services:
   puppeth:
     image: xinfinorg/xdcsubnets:latest
@@ -17,6 +25,11 @@ services:
     ports:
       - "30301:30301/tcp"
       - "30301:30301/udp"
+    networks:
+      docker_net:
+        ipv4_address: 
+          192.168.25.10
+
   subnet:
     image: xinfinorg/xdcsubnets:latest
     volumes:
@@ -28,6 +41,10 @@ services:
       - "30303:30303"
       - "8545:8545"
       - "8555:8555"
+    networks:
+      docker_net:
+        ipv4_address: 
+          192.168.25.11
   subnet2:
     image: xinfinorg/xdcsubnets:latest
     # entrypoint: "sleep infinity"
@@ -35,19 +52,27 @@ services:
       - "./xdcchain2:/work/xdcchain"
       - "./genesis.json:/work/genesis.json"
     restart: "always"
-    env_file: ".env2"
+    env_file: ".env.2"
     ports:
       - "30304:30303"
       - "8546:8545"
       - "8556:8555"
+    networks:
+      docker_net:
+        ipv4_address: 
+          192.168.25.12
   subnet3:
     image: xinfinorg/xdcsubnets:latest
     volumes:
       - "./xdcchain3:/work/xdcchain"
       - "./genesis.json:/work/genesis.json"
     restart: "always"
-    env_file: ".env3"
+    env_file: ".env.3"
     ports:
       - "30305:30303"
       - "8547:8545"
       - "8557:8555"
+    networks:
+      docker_net:
+        ipv4_address: 
+          192.168.25.13
