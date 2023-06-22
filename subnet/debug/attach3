@@ -8,8 +8,13 @@ if [ -z "$1" ]
       echo "XDPoS.getV2Block($1)" > command.sh
     else
       echo $1 > command.sh
-    fi
-    
+    fi    
 fi
 
-docker exec -i subnet-subnet3-1 XDC attach /work/xdcchain/XDC.ipc < command.sh
+sep_char='_'
+if [[ "$OSTYPE" == "darwin"* ]]
+    then
+        sep_char='-'
+fi
+
+docker exec -i subnet${sep_char}subnet3${sep_char}1 XDC attach /work/xdcchain/XDC.ipc < command.sh
