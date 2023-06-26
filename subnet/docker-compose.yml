@@ -1,12 +1,5 @@
 version: "3.7"
 
-networks:
-  docker_net:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 192.168.25.0/24
-
 services:
   puppeth:
     image: localbuild-subnet:latest
@@ -24,10 +17,6 @@ services:
     ports:
       - "30301:30301/tcp"
       - "30301:30301/udp"
-    networks:
-      docker_net:
-        ipv4_address: 
-          192.168.25.10
   subnet:
     image: localbuild-subnet:latest
     volumes:
@@ -35,30 +24,15 @@ services:
       - "./genesis.json:/work/genesis.json"
     restart: "always"
     env_file: ".env"
-    ports:
-      - "30303:30303"
-      - "8545:8545"
-      - "8555:8555"
-    networks:
-      docker_net:
-        ipv4_address: 
-          192.168.25.11
+    network_mode: "host" 
   subnet2:
     image: localbuild-subnet:latest
-    # entrypoint: "sleep infinity"
     volumes:
       - "./xdcchain2:/work/xdcchain"
       - "./genesis.json:/work/genesis.json"
     restart: "always"
     env_file: ".env.2"
-    ports:
-      - "30304:30303"
-      - "8546:8545"
-      - "8556:8555"
-    networks:
-      docker_net:
-        ipv4_address: 
-          192.168.25.12
+    network_mode: "host" 
   subnet3:
     image: localbuild-subnet:latest
     volumes:
@@ -66,11 +40,4 @@ services:
       - "./genesis.json:/work/genesis.json"
     restart: "always"
     env_file: ".env.3"
-    ports:
-      - "30305:30303"
-      - "8547:8545"
-      - "8557:8555"
-    networks:
-      docker_net:
-        ipv4_address: 
-          192.168.25.13
+    network_mode: "host" 
